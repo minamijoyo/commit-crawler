@@ -41,7 +41,7 @@ File.open("commits.txt", "w") do |file|
     # for each commit
     commits.each do |commit|
       sha = commit[:sha]
-      message = commit[:commit][:message]
+      message = commit[:commit][:message].gsub(/(\r\n|\r|\n)/," ")
       file.puts "#{repo}, #{sha}, #{message}"
     end
   end
