@@ -19,7 +19,11 @@ puts "Login user: #{client.user.login}"
 
 # check the current rate limit before call API
 puts "Check rate limit: #{client.rate_limit}"
-sleep 60 unless client.rate_limit.remaining
+until client.rate_limit.remaining do
+  reset_in = client.rate_limit.resets_in
+  puts "rate limit sleep in #{reset_in}"
+  sleep reset_in
+end
 
 # search popular repositories
 puts "Search repositories on GitHub"
@@ -34,7 +38,11 @@ File.open("commits.txt", "w") do |file|
   repos.each do |repo|
     # check the current rate limit before call API
     puts "Check rate limit: #{client.rate_limit}"
-    sleep 60 unless client.rate_limit.remaining
+    until client.rate_limit.remaining do
+      reset_in = client.rate_limit.resets_in
+      puts "rate limit sleep in #{reset_in}"
+      sleep reset_in
+    end
 
     # get commits list on the repository
     puts "Get commit messages on github:#{repo}"
