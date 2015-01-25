@@ -46,5 +46,8 @@ File.open("commits.txt", "w") do |file|
       message = commit[:commit][:message].gsub(/(\r\n|\r|\n)/," ")
       file.puts "#{repo}, #{sha}, #{message}"
     end
+
+    # speed adjust
+    sleep 10
   end
 end
