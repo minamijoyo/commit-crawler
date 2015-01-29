@@ -26,4 +26,4 @@ $ source githubapi.conf
 ```
 $ ruby crawler.rb
 ```
-The results are in "commits.txt".
+The results will be "commits.txt".
