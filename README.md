@@ -5,24 +5,25 @@ Crawler for GitHub commit messages
 This is a crawler program which collects commit messages on the GitHub popular repositories.
 
 ## How To Use
-1. Get your access token for GitHub API.  
+Get your access token for GitHub API.
+
 see: Creating an access token for command-line use  
  https://help.github.com/articles/creating-an-access-token-for-command-line-use/
 
-1. Git clone and bundle.
+Git clone and bundle.
 ```
 $ git clone https://github.com/minamijoyo/commit-messages
 $ cd commit-messages
 $ bundle install
 ```
 
-1. Export your access token to environment valiable.
+Export your access token to environment valiable.
 ```
 $ echo "export GITHUBAPI_ACCESS_TOKEN=xxxxx" > githubapi.conf
 $ source githubapi.conf
 ```
 
-1. Run the crawler.
+Run the crawler.
 ```
 $ ruby crawler.rb
 ```
