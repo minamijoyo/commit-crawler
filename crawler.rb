@@ -96,7 +96,7 @@ class Crawler
       commits_response.map do |commit|
         { :repo => repo,
           :sha => commit[:sha],
-          :message => commit[:commit][:message].gsub(/(\r\n|\r|\n)/," ")
+          :message => commit[:commit][:message].lines[0].chomp
         }
       end
     end
