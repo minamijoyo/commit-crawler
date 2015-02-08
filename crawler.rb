@@ -94,9 +94,10 @@ class Crawler
     # @return [Hash] A hash of commit data
     def parse_commits(repo, commits_response)
       commits_response.map do |commit|
+        message = commit[:commit][:message].lines[0]
         { :repo => repo,
           :sha => commit[:sha],
-          :message => commit[:commit][:message].lines[0].chomp
+          :message => message.nil? ? "" : message.chomp
         }
       end
     end
