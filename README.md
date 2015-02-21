@@ -1,4 +1,4 @@
-# commit-messages
+# commit-crawler
 
 Crawler for GitHub commit messages
 
@@ -12,8 +12,8 @@ see: Creating an access token for command-line use
 
 Git clone and bundle.
 ```
-$ git clone https://github.com/minamijoyo/commit-messages
-$ cd commit-messages
+$ git clone https://github.com/minamijoyo/commit-crawler
+$ cd commit-crawler
 $ bundle install
 ```
 
